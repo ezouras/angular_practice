@@ -1,0 +1,61 @@
+DOM - document object model.
+HTML CREATE A DOM
+it's a DOM Tree.
+      Window
+        |
+      document
+        |
+       HTML  ----> represents the <html> element. then  <head> and <body> children.
+        |
+  head------body
+
+  ..n so on.
+
+You can view the DOM as a sort of API or objects that you can alter.
+You can use javascript and angular to alter the DOM objects. the html will stay the same.
+Important points:
+1/ HTM attributes and the DOM properties are different things.
+2/ angular binding works with properties and events, and NOT attributes.
+
+
+DOM contains the HTML elements as objects. The object properties, methods and events.
+It is a standard for accessing modifying adding or deleting HTML elements.
+<button [disabled]="isDisabled">Click me</button>
+<button disabled="{{isDisabled}}">Click Me</button>
+"disabled" is a DOM property, NOT an attribute.
+
+
+example:
+<button [disabled]="isDisabled">Click Me</button>  ---> property binding.
+<button disabled="{{isDisabled}}">click me</button>  ---> interpolation.
+
+it "looks" like we are binding to a disabled attribute. but we are NOT binding to an attribute
+of the button element.
+you are binding to the DISABLED button PROPERTY of the DOM.
+
+So... what's the difference?
+
+
+1/HTML Attribute -defined by the html.
+Attributes initialize dom properties.
+Once the properties are initialized, the attributes job is done.
+2/ DOM property -defined by the dom. properties values can change.
+the html attributes cannot change.
+
+
+example:
+<input id="inputId" type="text" value="tom">
+id = html attribute. value is "inputID".
+type = html attribute.  value is "text"
+value = html attribute. value is "tom"
+
+thru the html attributes and their values above, the job of the attributes of the HTML element is
+to initialize value properties of the input object of the DOM.
+in the example, if we run it in a browser, and bring up the console, you can inspect the dom
+objects:
+inputId.getAttribute('value');
+>"tom"
+input id is the value you gave to identify that particular html element. the element has
+a corresponding object who's id is "inputId". Not sure how you would get a handle of the
+element any othe rway.
+inputId.getAttribute

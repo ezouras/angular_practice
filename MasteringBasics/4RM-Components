@@ -1,0 +1,113 @@
+Components - building blocks of angular.
+
+made up of 3 parts:
+
+1/ template
+Represents the view. This is
+done thru html.
+
+2/ class
+code
+typescript.
+logic for the view.
+Data and methods that can be used
+to control the logic of the view.
+ie' show or hide an element depending
+on a methond.
+
+3/ metadata
+info - is it an angular component or
+just a regular class.
+defined using a decorator.
+decorator is a feature in TS.
+a decorator is a  function that provides
+information about the class that is attached to
+it.
+
+Template + class +metadata = angular component.
+
+******app.component.ts*********
+Class =at the bottom is "export class AppComponent".
+in this class is one property: title.
+and no methods. keeps it simple.
+
+Metadata = @Component.  the @Component is
+a function that attaches to the class right below
+it. (class AppCpomoent). @component is a
+component decorator. providides info about AppComponent.
+The metadata is in the decorator:
+  selector, templateUrl and the styleUrls.
+
+  A/ Selector
+  tag to used to represent component in HTML.
+  when the tag is encountered, the html for that component
+  is placed there. It renders the components html template
+  in that location.
+
+  see index.html in the src folder.
+  I think index is just used by default and not  explicitly
+  called from anywhere.
+
+  The selector in the component is:
+  "app-root". not how there is aj app-root tag
+  in the html fild.
+
+    1. use selector as a class
+    You could also use the selector as a class in the
+    html and not a tag:
+    <div class="selector-comp-name">
+    </div>
+    and in you romcponent:
+    selector:`.name-of-class`
+
+    2. use selector as brackets:
+    selector:`[name-of-comp]`
+    and in html..
+
+
+  b/ TemplateUrl = the view that will be rendered in
+  the selector. the html identified here, will
+  replace what is called out in index.html.
+
+  you can also specify th etemplate INLINE.
+  tempate: `<div>Inline template</div>`,
+
+  c/ StyleUrls = styles that will be used.
+  You can also have an inline styles using an array.
+  styles:[`
+  div{
+    color:red;
+  }
+
+  `]
+
+
+  *****creating a component******
+  >ng g c <name of component>
+
+  1 new folder = titled the name of the component to
+  house your new files.
+
+  4 new files are created:
+    test.component.css -> style sheet for component.
+    test.component.html-> html template
+    test.component.spec.ts-> created for testing purpses. we deleted.
+    test.component.ts -> the component that calls the rest.
+
+
+
+1 file changed: src/app/app.module.ts
+in this file you will see that TestComponent(<nameofComponent>Component)
+was added to the @NgModule decorator declartions property.
+This property has all the omcponents used in the
+application.
+
+
+
+
+
+
+
+
+
+//

@@ -1,0 +1,14 @@
+npm install less --save
+
+1/ in the src folder add the "styles" folder
+2/ in the src folder add the styles.less file
+2/ in angular.json
+projects -> ui -> architect ->build -> options -> styles
+add the following to the array:
+"src/styles.less"
+
+projects -> ui -> architect ->build -> options -> "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles"
+              ]
+            }

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Plain HTML javascript socket</title>
+</head>
+<body>
+	<h1> Simple Websocket </h1>
+	<div id="messageGoesHere"></div>
+
+<script type="text/javascript">
+	var ws= new WebSocket("ws://localhost:8085");
+	ws.onmessage = function(event){
+		var div = document.getElementById("messageGoesHere");
+		var textnode = document.createTextNode(event.data);         // Create a text node
+		div.appendChild(textnode); 
+	}
+
+	ws.onerror = function(event){
+		ws.close();
+		console.log("error ",event);
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+1/ a type script class.
+<componentname>.component.ts
+
+2/ start by exporting the class.
+export class viewUsers{
+
+}
+
+3/ tell angular that it is not just a ts class but an angular component.
+this is what ang needs.
+  a/ class decorator:
+    @component()
+  b/ import the component package
+    import {Component} crom '@angular/core';
+
+4/set some stuff up in the component decorator:
+  component({
+    selector:'app-<a-fitting-name>',
+    templateUrl:`./viewUsers.component.html` //the html code.  bue sure to create his file. add somethin i t to maek sure it works.
+    //or template: and define it here. YOU MUST HAVE A TEMPLATE. then use `literals` and write
+    styles:[` can add styles inline as well. `]
+  })
+
+  5/ create component thru the cli:
+  ng generate component <name>
+  ng g c <name>
+    a/ creates a new folder.
+    b/ .html, .ts, .testing files

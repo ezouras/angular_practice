@@ -1,0 +1,58 @@
+
+/** DI as a Design Pattern **/
+
+DI is a coding pattern in which a class receives its
+dependencies from external sources rather than creating them
+itself.
+
+
+with DI:
+class Car{
+  engine;
+  tires;
+  constructor(engine,tires){
+    this.engine= engine;
+    this.tires=tires;
+  }
+}
+
+The car class no longer creates the dependencies,
+it consumes them.
+A class should NOT create depdencies.
+it should only consume them.
+The creating of the dependancies are
+external to the class.
+
+var myEngine=new Engine();
+var myTires=new Tires();
+var myCar=new Car(myEngine,myTires);
+even if you change the engine,
+the way the car is created remains the same.
+code ius much more flexible.
+dependencies change - but the car class is intact.
+
+
+testing changes. you can create a car,
+but use different dependencies.
+where as the old car the dependencies don't change.
+
+
+** what if you have LOTS of dependencies:
+var myCar=new Car(myEngine,myTires, depA, depB, depz)
+you must create all the dependencies.
+var depZ=new dependency(depAb, depCd);
+now those dependencies have more dependencies.
+
+So what do you do? you use a DI as a framework.
+
+see 16b-rm-dep..
+
+
+
+
+
+
+
+
+
+//

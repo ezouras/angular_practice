@@ -1,0 +1,38 @@
+<div class="row">
+	<div class="col-xs-12">
+		<button (click)="onNewRecipe()" class="btn btn-success">New Recipe</button>
+	</div>
+</div>
+<hr>
+<div class="row">
+	<div class="col-xs-12">
+		<!-- you know from the (recipeWasSelected) event that there is a "recipeWasSelected" event 
+			in the app-recipe-item component.  it has an @Output to output the event to this 
+			compoennt.  it trigges the event "recipeSelected(recipe)" in this fiel
+		--> 
+		
+		<!-- added recipe service for management 
+		the (recipeWasSelectedEvent) listener is no
+		longer needed beacuse we added the reccipe server to handle it. 
+
+		<app-recipe-item 
+		*ngFor="let recipeOfLoop of recipes"
+		[recipe]="recipeOfLoop"
+		(recipeWasSelectedEvent)="recipeSelected(recipeOfLoop)"
+		></app-recipe-item>
+
+	-->
+
+	<!-- based on what is below you KNOW that [recipe] is a property in <app-recipe-item> compomponent.
+		it will have a @INput in orde to receive it from this html file
+	-->
+		<app-recipe-item 
+
+		*ngFor="let recipeOfLoop of recipes; let i=index"
+		[recipe]="recipeOfLoop"
+		[index]="i"
+		
+		></app-recipe-item>
+	</div>
+</div>
+

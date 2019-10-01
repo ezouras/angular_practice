@@ -1,0 +1,43 @@
+@import "variables";
+
+.service-health-count {
+  width: 14.2%;
+  height: 60px;
+  padding: 0px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.unhealthy-service-table {
+  background: none;
+}
+
+.healthy {
+  color: @body-grey-text;
+}
+
+.unhealthy {
+  color: @body-text;
+  font-weight: bold;
+}
+
+.healthy, .unhealthy {
+  a {
+    color: inherit;
+    &:hover {
+      color: inherit;
+    }
+  }
+}
+
+.table-label {
+  text-align: center;
+  vertical-align: middle;
+  font-weight: normal;
+}
+
+.no-data {
+  text-align: center;
+  padding: 10rem;
+  font-style: italic;
+}

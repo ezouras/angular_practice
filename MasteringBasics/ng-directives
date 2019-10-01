@@ -1,0 +1,6 @@
+1.ngClass = to set a style "class" in html doc. see 7rm-bindingStyle
+2.ngStyle = for inline styling. see 8rm-styleBinding
+3.[(ngModel)] = two way binding. a banna in a box. 11rm-2waybinding.
+4. ngIf - 12rm- structural diretive - conditinally render HTML element
+5. ngSwitch - 12rm - conditinal render html element
+6. ngFor - 12rm -render a list of html elements. 

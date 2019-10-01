@@ -1,0 +1,90 @@
+HTTP Mechanism:
+1.  http get request from employee service.
+use http client module.
+import it into the app.
+  a. in the app module.
+  import {HttpClientModule}from '@angular/common/http';
+  add it to the imports array:
+  imports: [
+    BrowserModule,
+    HttpClientModule
+  ],
+  don't need to add it to th eprovider.s
+
+  b. from the service class, add it to the constructor:
+  from <nameofservice>.service.tc
+  constructor(private http: HttpClient) { }
+
+  import it:
+  import{HttpClient}from '@angular/common/http';
+
+  c. make the get request from the service:
+  getEmployees(){
+    return this.http.get(this._url);
+    //we are going to assume the webserver is a file of data.
+
+  }
+
+2. receive observable and cast it into an employee array.
+  a. create an employee interface. in the appp folder,
+  create employee.ts.
+  export interface IEmployee{
+      id:number,
+      name: string,
+      age: number
+  }
+
+  b. from the service, cast what is returned into a
+  IEmployee and import IEmployee
+
+
+
+3. subscribe to the observable form emplist and emplist
+call the method and subscribe.
+
+this._instanceOfService.methodInService()
+.subscribe(data=>{do something with dtata});
+
+//you get a observable in resopnse to the method.
+// you then .subscribe the observable.
+
+
+this._employeeService.getEmployees()//this methd returns an observable.
+.subscribe(data=> this.employees=data);
+
+
+
+4. assign the employy array to a local variable
+
+RxJS  (not related to react)
+-Reactive extensions for JS.
+-External library to work with Observable.
+
+
+empl list                     --> get-->                    ---> request
+
+              --> |emp service|                   |Http|                    |Database|
+
+emp detail                    <-- observable             <----response
+
+
+
+
+http will hit a web api or webservice and get the
+necessary data.
+
+
+
+in the previous injectable rm, you hardcoded
+the employees. the data that was injected into the components.
+but in the real world, you would fetch that data from
+a webserver.
+
+
+employee.service.ts:
+
+getEmployees(){
+  return [
+      a bunch of employees hard coded.
+  ]
+}

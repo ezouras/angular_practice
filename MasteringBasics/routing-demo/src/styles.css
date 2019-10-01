@@ -1,0 +1,64 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+h1{
+  color:#2B769F;
+  font-family: 'Montserrat', sans-serif;
+}
+a{
+  display:inline-block;
+  background-color: #DBDADA;
+  color:#A3ABAD;
+  padding:1rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  font:1.5rem;
+
+}
+a:hover{
+  color:#3192EA;
+}
+div{
+  text-align: center;
+  padding: .5rem;
+}
+
+h3{
+  color:#5F6264;
+  font-family:'Montserrat', sans-serif;
+}
+.badge{
+  background-color: #56808A;
+  margin-left:0px;
+  margin-right:.25rem;
+  padding:.5rem;
+  padding-left:1rem;
+  color:white;
+  border-top-left-radius:.5rem;
+  border-bottom-left-radius:.5rem;
+
+}
+li{
+  font-size:1rem;
+  list-style: none;
+  width:30%;
+  margin-bottom:1rem;
+  padding:.5rem;
+  padding-left:0;
+  border-radius:.5rem;
+  color: #DBDADA;
+  background-color:#A3ABAD;
+}
+li:hover{
+  color:#3192EA;
+  background-color:#DBDADA;
+  cursor: pointer;
+}
+li:active {
+  background-color:#DBDADA;
+  transform: translateY(4px);
+}
+li.selected {
+  color:#3192EA;
+  background-color:#DBDADA;
+}

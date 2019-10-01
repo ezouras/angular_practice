@@ -1,0 +1,12 @@
+1/ import HttpClientmodule
+
+in src/app/app.module.ts
+
+add the following import:
+import {HttpClientModule} from '@angular/common/http';
+
+imports: [
+	BrowserModule,
+	HttpClientModule
+
+]

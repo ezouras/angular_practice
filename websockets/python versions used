@@ -1,0 +1,3 @@
+python: 2.7
+flask-SocketIO 0.10.1
+python-socketio 3.1.2

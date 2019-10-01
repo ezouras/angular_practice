@@ -1,0 +1,119 @@
+***Routing in Ng ***
+
+Route = nothing but an object defined in the app-routing.module.ts.
+the object contains a path that is the url.
+And the component to be rendered when we navigate to
+the corresponding path.
+
+<router-outlet></router-outlet>
+this is located at the bottom of app.component.html and how the routes
+get displayed.  this is a "router directive".
+where a router displays a view.
+
+
+
+***** set up project ****
+
+
+1. Generate project with routing option.
+>ng new <project name> --<routing option>
+>ng new routing-demo --routing
+
+to add routing to existing application then you need to add
+the code explicitly.
+
+  a. in the src->index.html file:
+  under the title:
+  <title>Routing App</title>
+  <base href="/">
+  this is requred in order to know how to
+  construct the routes.
+
+  b. in src->app->app-routing.module.ts
+  include import:
+  import{ Routes, RouterModule} from '@angular/router';
+
+  c. in src->app->app.module.ts import the AppRoutingModule.
+      import { AppRoutingModule } from './app-routing.module';
+      imports: [
+        BrowserModule,
+        AppRoutingModule
+      ],
+
+  d. add the router-outlet tag in app.component.html:
+  <router-outlet></router-outlet>
+
+
+2. generate dplist and emplist components to be displayed in view
+  a.
+  >ng g c department-list -it -is
+  >ng g c employee-list -it -is
+  it= inline template.
+  is= inline style.
+  basically the decorator will automatically show it in the way
+  you need it to to have inline stuff.
+
+3. configure routes.
+You do this in the app-routing.module.ts
+  a. import the components you will route to:
+
+    Create two route objects for each of the components to be
+    routed to:
+      import {DepartmentListComponent} from './department-list/department-list.component';
+
+      const routes: Routes = [
+        {
+          path: 'departments',
+          component: DepartmentListComponent,
+          children: []
+        },
+
+
+        b. check to see that it is working:
+        //localhost:4200/employees
+          path: 'departments',-> from app-routing.module.ts
+        //http://localhost:4200/departments
+
+
+4. add buttons and use directives to navigate.
+
+5. add a component for page not found if you navagate to
+link that is not found:
+  >ng g c page-not-found
+  in app-routing.module.ts add it like the other componets.
+  import, add to const routs, add to componeent array.
+
+  b/ ensure that the wild card route is the last one.
+  it looks from the top down and as soon as it finds a match,
+  it stops.
+
+  but stopping here, you will see that the / root will show path not found.
+  therefore, you need a default place. for that, you use an empty path,
+  and use it as the top rout:
+  { path:"",<where the default location component is>}
+  in app-routing.module.ts
+  
+
+
+Project - one concept at a time.
+navigating between two views with button clicks.
+
+2 button:
+1. departments
+when you click on departments:
+navigate to view -
+localhost:4200/departments
+
+show
+DepartmentList
+
+2. employees
+localhost:4200/employees
+EmiployeeList
+
+
+
+
+
+
+//

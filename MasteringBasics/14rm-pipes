@@ -1,0 +1,12 @@
+Transform data before putting them in the view.
+1/ lowercase pipe.  changes a string to its
+lower class representation.
+<h2>{{name | lowercase }}</h2>
+2/ uppercase:
+{{name| uppercase}}
+3/ titlecase:
+{{name|titlecase}}
+cap first letter of each word
+4/ slice:
+{{name|slice: beg# end#}}
+if you just have a beg it will slice from therer on. 

@@ -1,0 +1,20 @@
+Authorize user readme
+1/ install firebase. 
+2/ in the ngOnInit on the appcomponent, 
+(because that is the first thing that runs)
+Initialize firebase with the api key and the
+domain which that api key applies (the domain is 
+simply our database)
+3/use getIdToken()  for obtaining the token, NOT getToken()  as shown in the next lectures.
+
+(using a release of firebase above 5.0)
+
+4/ after getting "register" and "sign in"
+to work:
+
+use test1@test.com
+and 123456 as the password as a test.
+
+go to "application" in the inspector. 
+under, "storage->indexedDB->firebaseLocalStorage" 
+   

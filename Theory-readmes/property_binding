@@ -1,0 +1,16 @@
+Property Binding
+
+<h4>{{recommended}}</h4>
+
+<p>{{1+1}}</p>  1+1 is a template expression.
+in property-binding, the template expression
+appears in quotes after the "=" of a property.
+
+<img [src]="itemImageUrl2">
+
+property is "src" and it is equal to "itemImageUrl2"
+which should be set in the class.
+
+in template expressions you cannot have
+javascript expressions that have side effects.
+++, +- , new , instanceof, typeof, etc.

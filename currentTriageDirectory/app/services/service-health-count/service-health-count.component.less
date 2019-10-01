@@ -1,0 +1,122 @@
+@import "variables";
+
+@brand-success-hover: lighten(@brand-success, 25%);
+@alert-danger-hover: lighten(@alert-danger-down, 25%);
+
+.healthy-triangle{
+  background-image: linear-gradient(
+    to bottom right,
+    @transparent 50% - @service-health-line-width,
+    @brand-success,
+    @transparent 50% + @service-health-line-width
+  );
+  border-left: @service-health-line-width solid @brand-success;
+  border-top: @service-health-line-width solid @brand-success;
+}
+
+.unhealthy-triangle{
+  background-image: linear-gradient(
+    to bottom right,
+    @transparent 50% - @service-health-line-width,
+    @brand-success,
+    @alert-danger 50% + @service-health-line-width
+  );
+  border-left: @service-health-line-width solid @brand-success;
+  border-top: @service-health-line-width solid @brand-success;
+  border-right: @service-health-line-width solid @alert-danger;
+  border-botom: @service-health-line-width solid @alert-danger;
+}
+
+.healthy-triangle-hover{
+  background-image: linear-gradient(
+    to bottom right,
+    @transparent 50% - @service-health-line-width,
+    @brand-success-hover,
+    @transparent 50% + @service-health-line-width
+  );
+  border-left: @service-health-line-width solid @brand-success-hover;
+  border-top: @service-health-line-width solid @brand-success-hover;
+}
+
+.unhealthy-triangle-hover{
+  background-image: linear-gradient(
+    to bottom right,
+    @transparent 50% - @service-health-line-width,
+    lighten(@brand-success, 25%),
+    @alert-danger-hover 50% + @service-health-line-width
+  );
+  border-left: @service-health-line-width solid lighten(@brand-success, 25%);
+  border-top: @service-health-line-width solid lighten(@brand-success, 25%);
+  border-right: @service-health-line-width solid @alert-danger-hover;
+  border-botom: @service-health-line-width solid @alert-danger-hover;
+}
+
+.health-shared {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+
+  a {
+    color: inherit;
+    &:hover {
+      color: inherit;
+    }
+  }
+}
+
+.healthy-count {
+  float: left;
+  color: @brand-success-text;
+  font-size: 1.25em;
+  top: 50%;
+  margin-top: -1.25em;
+  position: absolute;
+}
+
+.unhealthy-count {
+  float: right;
+  color: @body-grey-text;
+  bottom: 50%;
+  font-size: 1.25em;
+  margin-bottom: -1.25em;
+  position: absolute;
+  right: 10px;
+}
+
+.na {
+  color: @body-grey-text;
+  font-size: .9em;
+  width: auto;
+  position: relative;
+
+  div {
+    top: 50%;
+    margin-top: -1em;
+  }
+}
+
+.all-healthy {
+  .health-shared();
+  .healthy-triangle();
+}
+
+.includes-unhealthy {
+  .health-shared();
+  .unhealthy-triangle();
+
+  .unhealthy-count {
+    color: @body-text;
+  }
+}
+
+.all-healthy:hover {
+  .health-shared();
+  .healthy-triangle-hover();
+}
+
+.includes-unhealthy:hover {
+  .health-shared();
+  .unhealthy-triangle-hover();
+}

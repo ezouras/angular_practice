@@ -1,0 +1,46 @@
+Used inside the components template.
+
+mine data from the class to the template. 
+
+Represented by double curly braces, wiht a property name inside.
+{{someProperty}}
+
+We are asking angular to evaluate the content inside the
+curly braces and display the value when the component is
+rendered in the browser.
+
+you bind data from the class to the template.
+
+
+WE want the user to be dynamically created in the test component.
+
+in app.component
+
+
+in the @component decorator in test.component.ts, you have the following line:
+  template: '<h2> Welcome Evie!</h2>',
+
+
+instead of "Evie" being hard coded, make it dynamic.
+we add a property in the class of the compoennt and
+set public name = "Evie"
+then replace in the template "evie" that is hardcoded, to
+{{name}}
+
+you can use javascript inside the curly braces:
+<h2>{{"Welcome " + name}}</h2>
+<h2>{{name.length}}</h2><!-- java methods-->
+<h2>{{name.toUpperCase()}}</h2>
+
+you can create methods in the class, then call them in the template
+using interpolation:
+<h2>{{greetUser()}}</h2>
+
+YOU CANNOT use assignments:
+<h2>{{a=2+2}}</h2><!--this doesn't work.  assignments dont work-->
+you CANNOT use global javscript variables.  the template is
+NOT aware of the template javascript variables:
+<h2>{{window.location.href}}</h2>
+
+However, the class IS AWARE so you can assign this in the class
+to a property then use the proerty in the temlate.

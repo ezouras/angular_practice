@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input id="input1" type="text" value="Evie">
+    <button blue="color" id="button1" type="button" name="button-userName" disabled=false>I'm a button </button>
+    <!-- can give the button html turned object any attributes you want. I gave it the attribute blue-->
+    <p id="p1">what sort of properties do I have?</p>
+
+  </body>
+</html>
+<!--
+  I run the folloqing commands in the browser:
+  button1.getAttribute("disabled");
+  button1.getAttributeNames();
+  button1.name//button-userName
+  button1.getAttribute("name")//button-userName
+  button1.getAttribute("blue");//color
+  button1.blue //undefined.
+
+
+  input1.getAttribute("value"); //Evie
+  input1.value //Evie
+  in the dom, CHANGE the value of the input field to "jerry".   the run the
+  top two commands again:
+  input1.getAttribut("value");//Evie > goes to the html tag and gets the value
+  input1.value; //jerry> goes to the dom OBJECT which has changed based on input.
+  -->

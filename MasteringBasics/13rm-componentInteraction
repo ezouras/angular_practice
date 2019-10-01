@@ -1,0 +1,95 @@
+parent => appComponent
+child => test Component
+
+how do you get the parent and child to talk to each other?
+
+Parent-> send data to child component.
+Child -> send data to parent component.
+
+
+How? @Input and @output decorators.
+
+@Input() -> parent to child. child accepts input
+@Output() -> child to parent. the child sends output
+
+**example**
+AppComponent ->parent component -> send name to child component="evie".
+TestComponent-> child component-> send message to appComponent parent="hey parent".
+
+
+****Sending data from parent to child:
+1/ from the parent component html file.
+in the child selector:
+<app-test [parentData]="name"></app-test>
+
+parentData = the naem you will bind to in the child. the child
+declares "parent data"
+
+"name"= the value that parentData is binded to. name is declared
+in the parent.
+
+2/ from the parent app.component.ts , in the class:
+public name="Evie";
+
+
+3/ from the child component.ts:
+import { Component, OnInit, Input } from '@angular/core';
+
+4/ declare the data:
+@Input() public parentData;
+
+you don't need to use the name that was declared:
+
+@Input("parentData") public name;
+
+5/ use it in the child html:
+  <h2>{{"Hello " +parentData}}</h2>
+
+  if you used the alias:
+    <h2>{{"Hello " +name}}</h2>
+
+
+****Sending data from child to parent.
+
+
+You must use an event to send from child to parent.
+//send hello revolution from child to parent.
+
+1/import EventEmitter
+
+2/ create an event. from the child component.ts file:
+public childEvent= new EventEmitter();
+
+3/ import "Output"
+import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
+
+4/ add output decorator to the child variable:
+  @Output() public childEvent = new EventEmitter();
+
+5/ vind it to an event in the child html file:
+<button (click)="fireEvent()">Send Event</button>
+
+6/ define the event method in the child .ts file:
+fireEvent(){
+  this.childEvent.emit("hey revolution");
+}
+
+Capture in parent component.
+7/ from CHILD selector:
+  <app-test (childEvent)="message=$event" [parentData]="name"></app-test>
+
+$event will equal "hey revolution".
+
+childEvent is the binded event.
+what is emitted will be the value for "message"
+
+
+8/ define it in parrent .ts class:
+public message ="";
+
+9/ add it to the parent html:
+<h1>
+  {{message}}
+</h1>
+
+//

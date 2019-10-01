@@ -1,0 +1,59 @@
+databinding
+angular does not manipulate html attributes, it manipulates DOM properties
+because it is the DOM that is displayed.
+
+
+communication from the typescript code and the template.
+Angular is all about binding to DOM object properties. NOT the html element attributes.
+see 4-definitions.
+
+
+1/ output data
+from typescript TO the html:
+  a/ string interpolation {{data}};
+  where data is defined in the class. <p>server is {{servername}}</p>
+
+  b/ property binding [property]="data"
+  <input [value]="userName"> where username is defined in the class.
+  user a square bracket around an html attribute? NO -it's NOT an html attribute.
+  it's a DOM property. document object model that is created after the browser reads the
+  html.  if you change the html attribute - nothing happens until you refresh teh page,
+but changing the dom attribute will change it immediately.
+  sometimes there is a 1:1 between the html attribute and dom attribute.
+  example = "hidden"
+  [hidden] = DOM attribute
+  [hidden] = "is_hidden"
+is_hidden -is determined by the class which is ither true (hides element )
+or false( does not hide the element)
+
+2/ react to events. data from the template to the class.
+  a/ event binding.
+  (event)="expression"
+
+example:
+<button (click)="myClickFunction($event)">
+   Click Me
+</button>
+
+where "myClickFunctin()" is defined int he component.
+example events:
+click, change, dblclick, focus, keydown
+
+
+3/two way binding.  react to events and output.
+  a[(ngModel)]="data"
+
+4/ attribute binding.
+there are times you want to bind to the HTML attribute and not the DOM property.
+see 4-DOMvsHTML to know the difference.
+
+
+5/ combining event and property binding:
+<div class="joke-card"
+    *ngfor="let joke of jokes">
+  <h3 class="joke-setup">{{joke.setup}}</h3>
+<p class="card-text"
+  [hidden]="joke.hide">{{joke.punchline}}</p>
+<a class="btn" (click)="joke.hide=!joke.hide">tell me</a>
+
+we assume joke.hide is initally "true"

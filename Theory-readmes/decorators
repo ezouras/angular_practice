@@ -1,0 +1,17 @@
+Component
+Configuration metadata.
+Tells Angular that the class is a component
+class. determines how the component should be
+processed and used at runtime. i'e what style sheet
+to use? what html snippet or template
+to use. is used in conjunction with
+this component?
+
+A component must be available in the ngModule
+for it to be available to other components.
+
+A subset of directives. 
+
+@Component{
+
+}

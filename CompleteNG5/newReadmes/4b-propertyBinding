@@ -1,0 +1,53 @@
+Property binding exmaple:
+
+don't confuse the HTMl attribute wiht a DOM property.
+<input id=input1 type="text" value="evie">
+in a console: input1.getAttribute("value"); //evie -> this is an html attribute value.
+              input1.value //Evie -> this is a dom property value.
+
+Every html element is parsed by the browser, and translated into a DOM object.
+each has a couple of properties.
+
+square brackets tell angular that we want to bind something to
+an DOM property. in the square brackets is the DOM property.
+you are binding DIRECTLY to the native property - not thru html.
+
+
+you can see some dom properties by giving the element an id, and thru that id,
+do a input1.<properties>
+input.disabled = you will see the value of that property.
+
+ie'
+<button disabled>i'm a button</button>
+
+<button [disabled]="someValueINTheClass" >I'm a buton</button>
+I'm binding that property to something in the class so it is dynamic.
+this particular property takes a boolean value. other properties
+of a dom object may take different values.
+
+
+  a/ disable a button
+
+  in the class:
+
+  export class ServersComponent implements OnInit{
+  allowNewServer=false;
+  //property holding  a boolean value.
+
+  constructor(){
+    //excecuted at the point in time that this is created.
+    setTimeout(()=>{
+      this.allowNewServer = true;//after 2 seconds, I want the button to be abled.
+    },2000)
+  }
+  ngOnInit(){
+
+  }
+}
+
+b/ in the html file:
+<button disabled>Add Server</button>
+<button [disabled]="!thisAllowNewServer"> //note this is a type script expression. just like string interpolation.
+//thie ENTIRE syntex is interpreted by angular so it can be a typescript expression. 
+<p [innerText]="allowNewServer"></p>  --> sets the text thru property binding.
+<p>{{allowNewServer}}</p> -->does the same thing.

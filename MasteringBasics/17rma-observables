@@ -1,0 +1,35 @@
+Observables:
+A sequence of items that arrive asynchronously over time.
+HTTP  call - single item.
+single item - HTTP response.
+
+http response that arrives asyncrhonously is the observable.
+but it is not in a format that can be used.
+ie' you may need to create an employee array with the data. 
+
+
+|source|-> convert -> |newspaper co| -subscribe-> house 1
+                                     -subscribe-> house 2
+                                      -subscribe-> house 3
+
+
+source - information.
+company asks source fro info.
+the source sends info to the newpaper co.
+convert info into newpaper format.
+maybe a line of data needs to have a headline,
+and a bodythat includes the one line.
+
+newspaper sends the newspaper only to those
+houses that have subscribed to the newspaper.
+
+whatever the houses do with the newspaper is up to them.
+they may read the news, they may make paper airplanes.
+
+source -> like a web api or database.
+service makes a request to the source.
+the api or db responds with an observable.
+
+
+
+//

@@ -1,0 +1,7 @@
+property decorator that configures a view query.
+The change detector (change detector? ) looks for the first element
+or the directive matching the selector in the view dom.
+  1/ the entire @viewChild query is the change detector.
+  it looks for a taged element or directive ()
+
+view queries are set before the ngAfterViewInit callback is called.

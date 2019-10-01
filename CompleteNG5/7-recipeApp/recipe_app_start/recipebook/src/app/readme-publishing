@@ -1,0 +1,42 @@
+readme-publishing
+
+1/ login to aws
+2/ got to "AWS management console"
+3/ S3 (under "Storage")
+4/ "create bucket"
+5/ I created "evie-ng-recipebook-deployment"
+6/ click on bucket created. 
+7/ select "properties" tab
+8/ select "use this bucket to host a website"
+9/ endpoint or "domain" is at the top:
+http://evie-ng-recipebook-deployment.s3-website.us-east-2.amazonaws.com
+
+10/ index document:
+index.html
+
+11/ error document:
+index.html
+
+//this totally did not work//
+
+12/ click on the "permissions" tab 
+13/ select "bucket policy"
+14/ click on "documentation" link at the bottom
+
+///
+
+15/ quit ng 
+16/ 
+>ng build --prod --aot
+
+17/ look at the <base href="/"> 
+it defaults to "index" but if you have something else:
+/triage
+that needs to be changed. you can use the cli:
+
+>ng build --prod --aot --base-href /<somename>/
+
+18/ after the above commands, you know have a "dist" folder that needs
+to be uploaded. 
+
+19/ 

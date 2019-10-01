@@ -1,0 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <h1>
+    Message from server is {{messageFromServer}}
+  </h1>
+  <h1>
+    Websocket status is {{status}}
+  </h1>
+  <div style="display: flex;">
+  <label for="name">Type a message to send!</label>
+  <input type="text" id="message" #message>
+  <button type="button" (click)="sendMessageToServer(message.value)">Submit Message</button>
+ </div>
+</div>
+

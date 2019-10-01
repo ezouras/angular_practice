@@ -1,0 +1,12 @@
+<ngb-tabset>
+  <ngb-tab title="Region">
+    <ng-template ngbTabContent>
+      <app-unhealthy-service-table attributeName="datacenter"></app-unhealthy-service-table>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab title="Service">
+    <ng-template ngbTabContent>
+      <app-unhealthy-service-table attributeName="service_name"></app-unhealthy-service-table>
+    </ng-template>
+  </ngb-tab>
+</ngb-tabset>

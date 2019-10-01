@@ -1,0 +1,27 @@
+String INterpolation.
+Simply add dynamicn content to the template.
+
+
+
+    1. class:
+        export class ServerComponent{
+          serverId: number = 10;
+          //name : type  = value;
+          serverStatus: string = "offline";
+          getServerStatus(){
+          return "offline";
+          }
+        }
+b/ template:
+different ways to do it.  Restrictions:
+  1. has to be, in the end a string.
+  2. can't be multiline BUT it can be a ternary expression.
+
+      <p>server with id {{serverId} is {{serverStatus}}
+      //in the curly braces MUST be a string. Doesn't matter how you get to it.:
+      <p>server with id {{someNumber} is {{serverStatus}}//some numbr works
+      //because it can be easily turned into a string.
+      or
+      <p>server with id {{"im a string"}} is {{getServerStatus()}}
+      //as long as the method i sdefined in the class and either returns a string,
+      //or something that can be easily converted into a string.

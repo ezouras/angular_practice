@@ -1,0 +1,42 @@
+know the difference between an HTML attribute
+and a DOM property.
+
+**** Attribute VS Property ***
+Attributes = HTML.
+Properties = DOM (Document Object Model)
+
+Attributes initialize DOM properties and then they are done.
+Attributes values cannot change once they are
+initialized.
+
+property values can change.
+
+Why is this important for Property binding.
+Because it initially seems like we are binding
+to the attribute.  But we are not.  we are binding to the
+DOM property and NOT the html attribute.
+
+
+
+In the test.copmonent, you have an input element on the
+dom.  when you bring up the project in the browser,
+
+1. select the input so that it is caputred by
+the chrome developer.
+>$0.getAttribute('value');
+$0=current element.  you should have the selected element.
+it will show "Evie"
+>$0.value
+will also work.
+
+
+NOW change the value from "Evie" to
+"Jerry" in the input field.
+running
+$0.getAttribute("value") returns "Evie" NOT jerry.
+but
+$0.value returns "Jerry"
+
+
+The ATTRIBUTE in the html document did not change.
+but the value did change.

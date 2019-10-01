@@ -1,0 +1,15 @@
+<div
+    *ngIf="healthy > 0 || unhealthy > 0; else notApplicable"
+    [class.all-healthy]="!unhealthy"
+    [class.includes-unhealthy]="!!unhealthy"
+>
+  <div class="healthy-count">
+    <a [routerLink]="['../list']" [queryParams]="healthyQueryParams">{{ healthy }}</a>
+  </div>
+  <div class="unhealthy-count">
+    <a [routerLink]="['../list']" [queryParams]="unhealthyQueryParams">{{ unhealthy }}</a>
+  </div>
+</div>
+<ng-template #notApplicable>
+  <span class="na">not applicable</span>
+</ng-template>

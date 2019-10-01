@@ -1,0 +1,19 @@
+Data binding:
+JS class-> template.
+
+
+Event binding:
+template--> JS Class
+
+from view to class for an operation.
+ie' from an input field.
+
+we use tempalte reference variables.
+
+
+in the element in whic you want reference to:
+//want reference to the input givein in an input element
+<input #myInput type="text">
+<button (click)="logMessage(myInput.value)">button</button>
+
+now pass that value (myInput) to the method "logMessage"

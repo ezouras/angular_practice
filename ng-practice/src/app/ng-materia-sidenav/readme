@@ -1,0 +1,15 @@
+https://nirajsonawane.github.io/2018/10/27/Angular-Material-Tabs-with-Router/
+
+if your using angular material:
+npm install --save @angular/material
+forced audit.
+installed updated version of type script
+npm i typescript@3.1.6 --save-dev --save-exact
+npm i tar@4.4.8 --save-dev
+
+Then another error regarding an overwrite and tar:
+https://stackoverflow.com/questions/55638180/how-to-fix-npm-package-tar-with-high-vulnerability-about-arbitrary-file-overwri
+
+https://github.com/sass/node-sass/issues/2625
+
+https://medium.com/codingthesmartway-com-blog/angular-material-and-angular-6-material-design-for-angular-6b1a3ee476f0

@@ -1,0 +1,27 @@
+@import "variables";
+
+/* This is an ng-bootstrap tab (not the layout navigation item class) */
+:host /deep/ .nav-tabs .nav-link {
+  border-color: @separator-line;
+  color: @body-grey-text;
+  border-bottom: 0;
+
+  &.active {
+    color: @body-text;
+  }
+}
+
+:host /deep/ .nav-tabs {
+  border-bottom: @service-health-line-width solid @separator-line;
+  background-color: @body-bg;
+
+  .nav-item {
+    margin-bottom: (-1px * @service-health-line-width);
+  }
+}
+
+:host /deep/ .unhealthy-service-table {
+  thead th {
+    border-top: 0;
+  }
+}

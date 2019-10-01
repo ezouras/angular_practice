@@ -1,0 +1,44 @@
+<div>
+  <!--<app-ng-materia-sidenav></app-ng-materia-sidenav>-->
+  <app-ng-mat-tab></app-ng-mat-tab>
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<div>
+  <h1>Quotes Directive</h1>
+  <components-quote></components-quote>
+</div>
+<div>
+  <h1>ng content component</h1>
+    <app-ngcontent-parent></app-ngcontent-parent>
+  </div>
+<div class="colorpicker">
+  <app-cp-root-component></app-cp-root-component>
+</div>
+<div>
+  <app-directives></app-directives>
+</div>
+<div class="">
+  <h2> Using Dependency Injection</h2>
+  <h2 *myCustomIf = "condition">Hello {{name}}</h2>
+  <button (click)="condition =!condition">Click</button>
+</div>
+<div>
+  <h1> style 1</h1>
+  <app-style1></app-style1>
+</div>
+<div>
+  <h1> style 2</h1>
+  <app-style2></app-style2>
+</div>
+<<div class="viewchildComponent">
+  <h1>View Child stuff</h1>
+  <app-parent></app-parent>
+
+</div>
+
+</div>
+<br/>
+<br/>

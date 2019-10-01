@@ -1,0 +1,51 @@
+Style classes.  not typescript classes.
+[class]="name-of-style";
+binds the class property to the javscript property "name of style"
+
+example:
+<h2 [class]="success-class">
+
+<style>
+
+.text-success{
+  color: green;
+}
+in javascript class:
+public success-class="text-success";
+//it's a string. the . is removed.
+
+if you use [class] binding, a regular class attribute becomes a dummy
+attribute and is ignored:
+<h2 class="italic" [class]="success-class"
+italic is ignored.
+
+
+** using a conditional for a single style class ***
+Add or removce styles to the html template dynamically.
+based on user interactions or state or whatever.
+
+
+
+[class.styleClassToUse]="BooleanPropertyDefinedInJSClass"
+
+if it equals "true" the styleClassToUSe will be applied.
+if it is NOT true, the styleClassToUSe will not be applied.
+
+*****conditional for multiple styles *******
+ng-class directive.
+Directive - custome html attribute that angular provides.
+
+in html template:
+  <h2 [ngClass]="messages">Coderevolution</h2>
+
+  in js class:
+  public messages={
+    "nameOfStyle":booleanValue,
+    "nameOfAntherStyle":booleanValue,
+    "nameOfAthirdStyle":booleanVAlue
+  }
+
+  in styles:
+  .nameOfStyle{
+    color:purple
+  }

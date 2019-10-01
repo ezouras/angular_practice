@@ -1,0 +1,15 @@
+Dependency Injection is a way to create objects that depend on other objects.
+
+depdendent objects = the objects that depend on other objects ( the dependencies )
+When an instance of an object is created, the injection supplies the dependent objects
+to this new object instance.
+
+
+components and services are classes.
+the constructor is called when a new instance of the class (object) is created.
+
+We specify dependencies in the constructor of our components.
+
+*prior to angular 6.
+You MUST specify the services in the providers:[] property of the
+NgModule decorator.

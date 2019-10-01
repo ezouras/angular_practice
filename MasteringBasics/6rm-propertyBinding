@@ -1,0 +1,38 @@
+Bind to the DOM Property  (see 6rmFirst)
+
+Example:
+  <input [id]="myId" type="text" value="Evie">
+  you are binding to the id property of the input element.
+  Hence.. property binding.
+
+  [disabled]="isDisabled"
+  or
+  bind-disabled="isDisabled"
+
+  isDisabled is a property in the class that can be either
+  true or false.
+
+  [disabled] is the input property name that is dependent on the
+  value that is defined in the class. disabled is not defined
+  in the class. it is a DOM property.
+
+  *********
+
+  you could just explicitly do it. so why use it?
+  <input id="myId" type="text" value="Evie">
+
+  both input elements have an id property that equals
+  "myId". so why use it?
+
+
+  there is a limitation in using interpolation.  that is where
+  this comes in.
+
+  <input disabled id="{{myId}}" type="text" value="Evie">
+  using disabled automatically make the input value disabled.
+  it doesn't matter if you set it equal to false, it is still
+  disabled. in other owrds, this has no effect:
+
+  <inpub disabled="false"...> --> doesn't do anything.
+  <input disabled="{{false}}"--> still doesn't work.
+  <input [disabled]="false" ..--> THIS DOES WORK!

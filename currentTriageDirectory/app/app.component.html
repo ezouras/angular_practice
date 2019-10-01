@@ -1,0 +1,16 @@
+<app-header></app-header>
+
+<div class="content container">
+  <div class="row content-row">
+    <div
+        class="content-pane"
+        [ngClass]="{
+          'inactive': navService.alertPanelActive,
+          'active': !navService.alertPanelActive
+        }">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

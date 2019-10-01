@@ -1,0 +1,44 @@
+<table
+    *ngIf="watcher.hasData; else noData"
+    class="table table-bordered table-dark unhealthy-service-table"
+>
+  <thead>
+    <tr>
+      <th></th>
+      <th *ngFor="let environName of watcher.environments" class="table-label">
+        <span
+            [class.healthy]="!watcher.environHasUnhealthy(environName)"
+            [class.unhealthy]="watcher.environHasUnhealthy(environName)">
+          <a [routerLink]="['../list']" [queryParams]="{environment: [environName]}">
+            {{ environName }}
+          </a>
+        </span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let attribute of watcher.data | keyvalue">
+      <td class="table-label">
+        <span
+            [class.healthy]="!watcher.attributeHasUnhealthy(attribute.key)"
+            [class.unhealthy]="watcher.attributeHasUnhealthy(attribute.key)">
+          <a
+            [routerLink]="['../list']"
+            [queryParams]="buildQueryParameters(attribute.key)">
+            {{ attribute.key }}
+          </a>
+        </span>
+      </td>
+      <td *ngFor="let environ of watcher.environments"
+          class="service-health-count"
+          [healthy]="attribute.value[environ] ? attribute.value[environ].healthy : 0"
+          [unhealthy]="attribute.value[environ] ? attribute.value[environ].unhealthy : 0"
+          [healthyQueryParams]="buildQueryParameters(attribute.key, [environ])"
+          [unhealthyQueryParams]="buildQueryParameters(attribute.key, [environ], ['unhealthy'])">
+      </td>
+    </tr>
+  </tbody>
+</table>
+<ng-template #noData>
+  <div class="no-data">{{ message }}</div>
+</ng-template>

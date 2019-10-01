@@ -1,0 +1,33 @@
+**** DI as a framework ***
+
+Injector - register all dependencies.
+A container of all dependencies for a given component. like Car component.
+or like a employee list - which is dependent on employees.
+so is employee detail - also dependent on employees. 
+
+So if you want a car, the injector provides all the
+dependencies.  Injector will manage the dependancies.
+
+
+
+injector
+
+engine    ServiceA
+tires     ServiceB
+depA      ServiceC
+depAb     ServiceD
+..
+..
+..
+..
+..
+depZ       ServiceZ
+
+  |
+  \/
+  CAR
+
+
+
+
+//

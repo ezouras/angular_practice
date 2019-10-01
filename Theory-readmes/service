@@ -1,0 +1,7 @@
+Components should delegate data access (directly fetch and save data)
+to a service.
+
+Services are a great way to share information between components/classes
+that don't know each other.
+
+>ng generate service <name of service>

@@ -1,0 +1,41 @@
+<ng-template #rt let-r="result" let-t="term">
+  <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+  <span class="badge badge-primary">{{ filters[r.type] }}</span>
+</ng-template>
+
+<div class="card-container">
+  <section class="filter-section">
+    <label for="filter_select">Filter: </label>
+    <input
+      #input
+      placeholder="Search..."
+      id="filter_select"
+      type="text"
+      class="form-control form-control-sm ttui-textbox-sm"
+      (selectItem)="itemSelected($event, input);"
+      [(ngModel)]="model"
+      [ngbTypeahead]="filterSearch"
+      [resultTemplate]="rt"
+      [inputFormatter]="formatter"/>
+
+    <span
+      *ngFor="let filter of searchParams | keyvalue">
+      <span class="search-param">{{ filters[filter.key] }}: </span>
+      <a
+        *ngFor="let value of filter.value"
+        class="badge badge-secondary filter-badge"
+        [routerLink]="['../list']"
+        [queryParams]="excludeFilter(filter.key, value)">
+          {{ value }} <fa-icon [icon]="faWindowClose"></fa-icon>
+      </a>
+    </span>
+  </section>
+
+  <app-service-card
+    *ngFor="let service of results"
+    [service]="service">
+  </app-service-card>
+  <div *ngIf="results.length <= 0" class="no-results">
+    {{ message }}
+  </div>
+</div>

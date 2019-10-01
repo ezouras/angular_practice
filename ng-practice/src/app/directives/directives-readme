@@ -1,0 +1,72 @@
+https://www.sitepoint.com/practical-guide-angular-directives/
+https://blog.avenuecode.com/how-to-customize-your-angular-app-using-directives
+
+three types of directives:
+1/ components - directives wiht a templates
+The selector is how ou show the thing in the dom
+
+2/ structural directives - change the dom layout by adding and removing dom elements.
+will impact host element and descendents so are preceded with a "*"
+*ngIf, *ngFor
+
+3/ attribute directives - change the appearance or behavior of an element , component
+or another directive.
+
+an angular component is actually a directive.
+An angular component is a directive with a template.
+
+A directive is a function that is executed by the angular
+compiler when it encounters it in the DOM. it ends up extending
+the HTML content.
+
+Each directive can be used in context with something HTML specific
+such as an attribute, a class, attribute or comment. This is
+determined by the directive itself.
+
+There are there are three different types of directives:
+
+1/ components.  As stated earlier.  directives with a template.
+under the hood they use the directive api.
+
+the next two directives don't have templates.
+They focus on dom manipulation exclusively.
+
+2/ Attribute directive
+apply conditional style to a template or html.
+maybe hide or show elements. does not change the html dom structure.
+ie' below conditionally using a color.
+
+<p [ngClass]="{'blue'=true, "yellow":false}"> this is a paragraph</p>
+<style>  .blue{color:blue}; .yellow(color:yellow) </style>
+
+3/ structural directive
+tailored to create or destroy dom elements. structurally changes the dom.
+ie' ngIf
+
+<button (click) = "show = !show">{{show? 'hide':'show'}}>
+show = {{show}}
+<br>
+<div *ngIf="show">text to show </div>
+ class imAClass {
+  show:boolean = true;
+
+ }
+
+ ****** CREATING A DIRECTIVE *****
+
+ 1/ use the @Directive decorator instead of component decorator (or injector or whatever)
+ 2/ add it to the app.module.ts
+
+Directives get access to the view container by injecting a "ViewContainerRef".
+it gets injected in the constructor ( I think )
+
+*** WHEN TO USE WHICH DIRECTIVE ***
+when do you use an attribute vs. a strucutural directive WHEN
+deciding whether the piece of DOM should be there AT ALL (structural),
+or instead be hidden(attribute)
+
+Here is the simple rule of thumb:
+if the element that has the directive is useful in the dom even when it's
+invisible(use attribute hidden), then use an attribute.
+In general, removing and recreating elements should be avoided.
+it's cleaner but comes at the expense of performance.

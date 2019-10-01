@@ -1,0 +1,37 @@
+Readme
+
+** firebase backend ***
+1/ using a "get" and "put" didn't require an installation 
+2/ using the user authentifcation - specifically when using firebase
+the plan is to use SDK and so the following was installed:
+> npm install --save firebase
+and
+>npm audit fix
+3/ the sdk is configured on "onInit" in the appComponent
+becuase that is what runs when the app starts. 
+
+4/  use getIdToken()  for obtaining the token, NOT getToken()  as shown in the next lectures.
+
+(using a release of firebase above 5.0)
+
+
+in the home page. we display the 
+1/ app-Header
+2/ app-recipes
+3/shoppint-list-app
+
+
+App-recipes has two columns. 
+1/ app-recipe-list. it goes thru the list of all recipes. has a button to add a new recipe
+2/ app-recipe-detail which shows the details (name, description, ingredients) of a given selected recipe in the list. 
+		has a drop down to 
+				-edit the recipe
+				-go to the shopping list. 
+3/ shoping-list-app , first has the selector to display the shoping-edit. 
+then shows the ingrdients to some recipe int he future sing the Ingredient model in the
+shared folder. 
+
+
+a. no way for "app-recipe-detal" to know which recipe is selected in "app-recipe-list"
+
+

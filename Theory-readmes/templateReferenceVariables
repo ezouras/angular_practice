@@ -1,0 +1,33 @@
+Tempalte Reference Variable
+https://itnext.io/working-with-angular-5-template-reference-variable-e5aa59fb9af
+
+  a reference to a dom element within a template.
+You can use it in the component IF you
+use "ViewChild"
+It can also be a reference to an Angular component
+or directive or a web component
+
+Declare a reference variable using "#"
+<input type="text" #fname>
+<input type="text" #lname>
+
+now you can use it anywhere in the template:
+
+<button (click)=show("fname")>Show!</button>
+
+fname and lname are properties of the
+HTMLInputElement
+
+show(lname: HTMLInputElement){ //property binding!?
+  show(lname.value)
+}
+
+To use lname in the component you need the 'viewChild'
+decorator:
+import {ViewChild, ElementRef} from '@angular/core';
+
+@viewChild("fname")fname_elem_ref: ElementRef;
+
+show_full_name(lname: string){
+  this.fullname = fname_elem_ref.nativeElement.value + lname
+}

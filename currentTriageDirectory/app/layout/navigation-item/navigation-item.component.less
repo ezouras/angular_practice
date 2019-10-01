@@ -1,0 +1,36 @@
+@import "variables";
+
+.nav-item {
+  display: inline-block;
+  width: 130px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-right: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: @body-text;
+
+  &.selected {
+    color: @body-text;
+    background-color: @nav-item-selected;
+
+    &:hover {
+      background-color: lighten(@nav-item-selected, 5%);
+    }
+  }
+
+  &:hover {
+    background-color: darken(@header-bg, 2%);
+  }
+}
+
+.nav-label {
+  text-transform: uppercase;
+  font-size: @h2-size;
+}
+
+fa-icon {
+  display: block;
+  font-size: 1.25em;
+  text-align: center;
+}

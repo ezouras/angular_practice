@@ -1,0 +1,50 @@
+npm install --save @ngrx/store
+
+the ngrx store is set up by importing it
+in the app.module:
+  a/ import {StoreModule} from "@ngrx/store";
+  b/ import the function
+  import { shoppingListReducer } from './shopping-list/store/shopping-list.reducer';
+  c/ StoreModule.forRoot({shopingListReducerFunc:shoppingListReducer}),
+  this above statement connects the store module with the reducer.
+
+you can then inject the store. it becomes "injectable"
+constructor(store:Store)
+we named it "store" but you can name it whatever you
+want.  it MUST be of type "Store" (shopping-list.component)
+and it can't be a generic type "Store", youmust describe
+what it looks like.
+it MUST be the name you gave3 it in the module for
+the 
+
+ngrx not to be confused wiht rxjs.
+
+ngrx - redux. Angulars implementation of redux.
+or ng redux.
+Differences between ngrx and regular redux.
+1/ used for Angular
+2/ uses rxjs
+3/ uses typescript
+
+State management pattern.
+a library to help you implement the pattern in any application.
+1/ you have one central store in your entire application.
+this holds your application state. One large data store.
+
+2/ services and components still talk to each other but they
+receive their state from the store. the store is the single source
+of truth.
+
+3/ services and components "dispatch" changes to the store
+to update the state of the app. the action does not directly
+hit the store. it hits a "reducer"
+
+4/ when making updates to the state, the component or service takes
+a "dispatch" action that hits a reducer.
+
+5/ you have parameters  to the action.
+    a/ an action such as add or delete a recipe.
+    b/ perform code one the state that is also an argument.
+    to update the state in an immutable way. copy old state
+    and update the copy.
+    c/ reducer returns the state.  and overrides the old state.

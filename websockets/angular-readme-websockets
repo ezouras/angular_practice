@@ -1,0 +1,19 @@
+wrap a service around a websocket object.
+create a subject to listen for broadcasts
+
+how do you wrap a websocket object in a service?
+
+What's the difference between an observable, observer, and a 
+subscriber? 
+
+print machine - prints women fashion magazines. 
+
+mailman - observable. 
+a mailman carries the magazine. 
+
+you "subscribes" to an "observable" hoping to get the 
+observer.    the person who subscribes shoudl 
+expect to get "an observer" an observer is returned. 
+The observer knows what to do with the data. 
+
+

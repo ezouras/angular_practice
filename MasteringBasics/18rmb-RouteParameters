@@ -1,0 +1,59 @@
+DepartmentList:                   DepartmentDetail
+
+1/ angular
+2/ node
+3/ MongoDb  ------ id -------->  You selected department with id 1.
+4/ ruby
+5/ bootstrap
+
+
+***relative Paths**
+in the routing demo - you original use
+/departments in many secnarios. but what
+if you had to change this to
+/department-list ? you would
+have to change it in a million different places!
+
+
+take advantage or relative paths.
+1/ in the department-list ocmponent
+  this.router.navigate([department.id],{relativeTo:this.route});
+  this.route says whatever the current route is, use it.
+  i don't care what it si.  BUT, append the department.id to
+  whatever that route is.
+
+  if your goig back one segment: from /departments/1 to /departments ,
+  then you can do the following:
+
+  this.router.navigate(["../",department.id],{relativeTo:this.route})
+
+
+  **child routes**
+  when routes can ONLY be viewed from within existing route.
+
+  Exammple: you are in the /departments/ view.
+  You can select one of serveral id options:
+  /departments/<some Id>
+  depending on what you selected from departmetns.
+  lets say,you want to display a "department overview" append and
+  "contact info" that comes up each time but that the data
+  is depement on the id itself. so, each id has it's own child route.
+
+  create two new comonents:
+  > ng g c department-overview -it -is
+  //inline styles and inline template
+  >ng g c department-contact -it -is
+
+  add the import statements, child compoents and components in the array of
+  the app-routing componnt.
+
+  in the department-detail component, add the tatg that will allow
+  childre to be displayed:
+  <router-outlet></router-outlet>
+
+in the "app routing " module:
+
+
+
+
+  //

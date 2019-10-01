@@ -1,0 +1,50 @@
+Dependency Injection
+Design pattern.
+
+Dependencies - services or objects that a class needs to perform it's
+function.
+
+DI = a class asks for dependencies from external sources rather than
+creating them itself.
+
+doen when class is instantiated.
+
+import { Injectable } from '@angular/core';
+import {HEROS} from "models/heros";//an interface heros with hero info
+
+An example hero service:
+
+@Injectable({//a service that can be injected.
+  providedIn: 'root',//instantiate once , use everywhere.
+})
+export class HeroService {
+  constructor() { }
+
+  getHeros(){
+    return some array of heros.
+  }
+}
+
+Class that uses it:
+hero-list.component
+
+import{Component} from "@angular/core";
+import {Hero} from "./hero";
+import {HeroSercice} from "./hero.service"
+
+@Component({
+  selector:"app-hero-list",
+  template: `
+    <div *ngFor = "let hero of heros">
+      {{hero.id}} - {{hero.name}}
+    </div>
+  `
+})
+
+export class HeroListComponent{
+  heros:Hero[];
+              YOUR name     name of service
+  constructor(heroService: HeroService){
+    this.heroes =heroService.getHeros;
+}
+}

@@ -1,0 +1,43 @@
+Attribute Binding  - angular recommends using property binding and not attribute binding unless there is
+no other way.
+Not all html element attributes have a corresponding property. colspan - like the example
+below, does not have a corrresponding property.
+
+
+
+:
+
+Employee Details:
+
+create an employee-component
+here is the html:
+<table>
+<thead>
+  <tr>
+    <th colspace="2">//tell angular to read the property from the class.
+    <th colspan={{columnSpan}}//you will get a template parse error. there is no PROPERTY called colspan.
+    <th attr.colspan="{{columnspan}}"> this will work. you tell angular to bind to the html attribute.
+    <th [attr.colspan]="columnSpan">  still works.
+      Employee details
+    </th>
+  <tr>
+</thead>
+<tbody>
+  <tr>
+    <td>First Name</td>
+    <td>{{firstName}}</td>
+  </tr>
+  <tr>
+    <td>Last Name</td>
+    <td>{{lastName}}</td>
+  </tr>
+  <tr>
+    <td>Gender</td>
+    <td>{{gender}}</td>
+  </tr>
+  <tr>
+    <td>age</td>
+    <td>{{age}}</td>
+  </tr>
+</tbody>
+</table>

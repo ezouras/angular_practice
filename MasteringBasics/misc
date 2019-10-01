@@ -1,0 +1,19 @@
+[] = binding conducted to bind from the js class
+to the template.  property binding
+<h1 [style.color]="titleColor">
+get the title class FROM the js class and use it in the template
+
+
+() =binding conducted to bind from the TEMPLATE to the jsclass.
+event binding.
+<button (click)="jsClassMEthod($event)">click todo something</button>
+
+
+[(two way binding)]= binding between the js Class to the template.
+binding from the js class to the template. BOTH. two way dataflow.
+
+
+
+
+
+//

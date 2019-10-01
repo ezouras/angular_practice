@@ -1,0 +1,59 @@
+Structural directives.
+add or remove HTML elements from the dom.
+
+******************ngIf*****************
+
+conditonally render HTML element.
+assign *ngIf a truthy or falsy value.
+
+*ngIf="false"
+*ngIf="jsClassPropertyThatIsEitherTrueOrFalse"
+<h2 *ngIf="false">I wont even bein the dob at all</h2>
+
+It is not as if you set the display proerpty to "none". It simply
+does not have the tag in the dom at all if ngIf is false.
+
+ngIf else block:
+<h2 *ngIf="displayName2; else elseblock">display if true</h2>
+//if ngIfis true, display the block in whic the ngIf statement is applied.
+//if ngIf is false, it first checks to see if there is an "else"
+//statement. we have an else statement.
+//display the <ng-template> block that has the #elseblock sited in the else
+//statement.
+
+<ng-template #elseblock>
+<h2> Display if false in if else block</h2>
+</ng-template>
+
+ngIf then else block:
+<ng-template #thenBlock>
+</ng-template>
+<ng-temlate #elseBlock>
+</ng-template>
+
+
+********************ngSwitch**********************************
+
+-ngSwitch - conditionally render HTML Element.
+example:
+
+<div [ngSwitch]="color">
+  <div *ngSwitchCase="'red'">You picked the color red</div>
+  <div *ngSwitchCase="'blue'">You picked the color blue</div>
+  <div *ngSwitchCase="'green'">You picked the color green</div>
+  <div *ngSwitchDefault>Pick again</div>
+</div>
+
+in jsclass:
+public color="green";
+
+if you choose a color that is not listed, it will use the default.
+so "color" value will be unrecognized in the switch block. 
+********************ngFor**********************************
+
+-ngFor - render a list of elements.
+
+
+
+
+//

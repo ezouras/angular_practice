@@ -1,0 +1,48 @@
+1/ Modules.
+First building block. angular apps are modular in nature.
+An application is a collection of many individual modules.
+Each module represents a different feature area of your application.
+ie users module = related to users.
+admin module - related to administrators.
+
+at the end of the day, modules is a bunch of lines of code
+that can be imported or exported.
+every angular app has at least ONE root module also
+called the "app" module.
+
+
+2/ components
+MOdules are made up of components and services.
+
+component -controls a portion of the view.
+comonent for navationa, one for the side bar.
+
+All angular apps have at least one component called the
+root component or the AppComponent.  the root component
+is called the AppComponent.
+
+All other ocmponents will be nested inside this root component.
+
+Each component will contain:
+  a/ HTML template
+  b/ class - logic that controls the view.
+
+
+3/ services
+Module will also contain services.
+Services is a class that contains the business logic of your
+application.
+
+
+Summary:
+Angular app - one or modules.
+Module - one or more components and services.
+Components - html +class
+Services - business logic.
+modules interact and ultimately render the view of the browser.
+
+
+
+
+
+//

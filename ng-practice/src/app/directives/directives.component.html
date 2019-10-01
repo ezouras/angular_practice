@@ -1,0 +1,23 @@
+<p>
+  directives works!
+</p>
+<div>
+  <h2> Structural Directive </h2>
+  <button (click)="show = !show"><!-- toggle 'show' between true and false -->
+    {{show ? 'hide':'show'}}<!-- if 'show' true then "hide" text on button, otherwise "show"-->
+  </button>
+    show = {{show}}<!--next to the button display what "show" is equal to -->
+  <br>
+  <div *ngIf="show">
+      I appear if true!
+  </div>
+</div>
+<div>
+  <h2>Attribute directive</h2>
+    <p [ngClass]="{'blue':show == true,'yellow':show==false}">
+      Angular Directives are Cool!
+      </p><!-- set class to .blue or .yellow depending on value of 'show'-->
+</div>
+<div>
+  <h2 my-error> this is from my customized directive</h2>
+  </div>

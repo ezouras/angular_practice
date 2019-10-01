@@ -1,0 +1,30 @@
+1/ create virtual environment
+>virtualenv py_websocket_tut_1_venv
+
+2/ activate the virtual enviornment
+>source <name_of_env>/bin/activate
+
+3/ to deactivate:
+>deactivate
+
+4/ create a build enviornment in sublime:
+	a. tools-> build system -> New Build System
+	give it a descriptive name:
+	websocket-tut1-virtualenv
+
+	b. open the build system by double clicking on it:
+	/users/ezouras/Library/Application Support/Sublime Text 3/Packages/User/<name of build system>
+
+	c. add the following:
+	{
+	    "cmd": ["/Users/ezouras/Documents/EvieSoftware/Angular/websockets/py_websocket_tut_1_venv/bin/python", "$file"],
+	    "selector": "source.python",
+	    "file_regex": "^\\s*File \"(...*?)\", line ([0-9]*)"
+	}
+
+	where "/Users/ezouras/Documents/EvieSoftware/Angular/websockets/py_websocket_tut_1_venv/bin/python"
+	is based on your virutal environment. 
+
+	setup.py
+
+	

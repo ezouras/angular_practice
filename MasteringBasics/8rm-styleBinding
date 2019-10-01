@@ -1,0 +1,22 @@
+Style binding - apply inline styles to HTML
+elements.
+
+<h2 [style.color]=
+or
+[style.background]
+or
+[style.border]
+
+Using a conditional:
+<h2 [style.color]="hasError ? 'green':'blue'">
+where "hasError" is a property in the js class.
+
+You could also use an ng directive:
+ngStyle
+<h2 [ngStyle]="titleStyles">
+
+where titleStyles is an object defined in the js class:
+public titleStyles={
+  color:"blue",
+  fontStyle:"italic"
+}

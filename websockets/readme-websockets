@@ -1,0 +1,31 @@
+HTTP: half duplex
+
+client 							server
+		----- http request ---> 
+       <----- http response----
+pip install asyncio
+
+       same connection. only goes one way. 
+       you make a request. you get a response.
+
+       huge overhead.  headers take up 300bytes
+       each way.  not useful for something like
+       high speed trading. 
+
+ Websocket: full duplex
+
+ 		<------ exchanging messages--->
+ 		goes both ways at the same time. 
+
+ 		small overhead. 5 bytes of overhead. 
+
+
+ 1/ supported by all browsers. 
+ 2/ event based.  ie' what do I do if a message come in. 
+
+ ****/// python websocket server //******
+ 1/ install websockets
+ pip install websockets
+2/ install asyncio
+pip install asyncio
+

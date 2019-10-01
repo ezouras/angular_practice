@@ -1,0 +1,38 @@
+1/ how you can do a "CASE" statement:
+
+in component. maybe a result of "GET"
+servers = [
+  {
+    instanceType: 'medium',
+    name: 'Production Server',
+    status: 'stable',
+    started: new Date(15, 1, 2017)
+  },
+  {
+    instanceType: 'large',
+    name: 'User Database',
+    status: 'stable',
+    started: new Date(15, 1, 2017)
+  }]
+
+
+// a server is passed from the html file.
+//bassed on that server.status, set the
+//clas for that html element.
+
+  getStatusClasses(server: {instanceType: string, name: string, status: string, started: Date}) {
+    return {
+      'list-group-item-success': server.status === 'stable',
+      'list-group-item-warning': server.status === 'offline',
+      'list-group-item-danger': server.status === 'critical'
+    };
+  }
+
+  2/ bind a htmlClass to a variable in the class.
+  <li
+    class="list-group-item"
+    *ngFor="let server of servers"
+    [ngClass]="getStatusClasses(server)">
+
+    based on the type script case statment,
+    set the class for the li.   

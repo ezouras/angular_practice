@@ -1,0 +1,22 @@
+State - redux-like 
+
+-rxjs-compat
+-rxjs6
+
+npm install --save rxjs-compat
+
+******************************************
+
+ Redux
+
+ "Store" -> application state. one place 
+ where your state lives. single source of truth. 
+
+ Services and Compoennts dispatch "Actions".
+
+ "Actions" are sent to "Reducers" .
+ where states are combined and the state is reduced.
+
+ "Reducers" -> save the reduced state in the store. 
+
+ngrx -> angualr redux

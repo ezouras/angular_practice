@@ -1,0 +1,30 @@
+<app-header></app-header>
+<!-- <app-header (featureSelected)="onNavigate($event)"></app-header>
+
+	featureSelected = is equal to an event emitter in the app header component. 
+	() = implies a EVENT binding.  the event is somethign that happens int he header comp.
+	specifically it's an event emmiter and when somethign happens int he header, it 
+	emits and event.  that event is passed ($event)
+
+  in THIS component. the app acomponent, the "onNavigate" funciton 
+  is called. unlike the @Output that's needed in the app-header.ts, 
+  app does not need an @input becuase the event is happening 
+  in ITS html file. 
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"> -->
+		
+    <!--replace this with routing that is now added 
+      	<app-recipes *ngIf="loadedFeature==='recipes'"></app-recipes>
+    	<shopping-list-app *ngIf="loadedFeature!=='recipes'"></shopping-list-app> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+    	<router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+

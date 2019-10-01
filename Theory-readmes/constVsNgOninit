@@ -1,0 +1,41 @@
+Constructor
+not really part of angular, part of Typescript and
+therefore part of the javascript engine.
+initializes and resolves all class members.
+  - initialize fields
+  - Angular DI (dependency Injection) will
+ use constructor parameter (what you pass to the
+ constructor method ) to find providers and
+resolve dependencies.
+
+ngOnInit - is an angular thing - NOt a
+javascript engine thing.  it tells angular it
+has finished setting up the component.
+ngOnInit is called AFTER the constructor.
+
+ - guarentees that your bindings are available.
+
+
+example. Inject a service, then use it.
+1/ Where is it injected?
+2/ when can you use it?
+
+import { DemoService } from './service/demo.service';
+
+export class testDemoService implements onInit{
+
+  myData: Array<string> = [];
+  info_count: string = "The data count is: "
+
+
+    constructor(d_service: DemoService){}
+
+    ngOnInit(){
+      this.myData = d_service.getData();
+      this.update_data_count();
+  }
+
+  update_data_count(){
+      this.info_count = this.info_count + this.myData.length;
+  }
+}

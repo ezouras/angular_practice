@@ -1,0 +1,34 @@
+Binding:
+
+JS class--> Template
+
+sometimes you need the dataflow in the other directions.
+
+Template/html-> JS classes
+
+from the template - like clicking or filling in data - > to the class.
+put the event in parenthesis, and have it equal the event in the js class:
+<button (click)="iWillClick()">
+
+
+in class:
+iWillClick(){
+  console.log("Clicked and binded!");
+}
+
+you can send info about the event:
+$event -> special word from angular:
+onClick($event);
+
+
+onClick(event){
+event.doSomething
+}
+
+/** putting javascript inline **/
+<button (click)="onTheFly='whooowah!'">click me!</h2>
+<h2>{{onTheFly}}</h2>
+
+
+from class:
+public onTheFly="";

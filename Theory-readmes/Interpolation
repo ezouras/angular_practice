@@ -1,0 +1,7 @@
+Interpolation
+  Angular evaluates all expressions in curly brackets and
+converts them into strings. 
+  embedding expressions into marked up text.
+<p>{{title}}</p> where title is reteived from the component.
+<p>The sum of 1 + 1 is {{1+1}}</p>
+<p>the sum of 1 + 1 is not {{1+1 + getVal()}}

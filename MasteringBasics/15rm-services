@@ -1,0 +1,24 @@
+Service:
+
+A class with a specific purpose.
+1/ share data across multiple components.
+a service will be responsible for providing data
+to components that ask for it.
+2/ implement application logic
+reusalbe code indepement of a component.
+doesn't necessarily need a view.
+3/ external interaction
+connecting to a database.
+
+naming convention  - <name>.service.ts
+ie'
+employee.service.ts
+
+
+
+
+
+
+
+
+//

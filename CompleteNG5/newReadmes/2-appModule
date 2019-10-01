@@ -1,0 +1,29 @@
+1/ what is it?
+components are used ot create web pages.
+modules are used to bundle them.  you only have multiple modules if you
+have larger applications.
+What does your app have and use?
+
+2/ like a component it, it's a type script class:
+export class AppModule{
+
+}
+3/ you need to import NgModule:
+import{NgModule} from `@angular/core';
+
+4/ add needed angular information in the decorator:
+@NgModule({
+  declarations:-> register all components you create.  [AppComponents,addUsers,anyothercomponets]
+  imports: -> if you create other modules. 
+  providers:
+  boostrap:-> tel angular what component to recognize when you start the app.
+})
+
+5/ anytime you create a new comonents, you must register the ecomponent in
+the correct corresponding module.
+  a/ this is done in the "declarations" array.
+  b/ you also must import it at the top of the module:
+    import{ addUsers } from './users/addUsers.component'
+
+
+//

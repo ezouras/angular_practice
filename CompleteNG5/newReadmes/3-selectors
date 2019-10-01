@@ -1,0 +1,36 @@
+1/ Select by html tag.
+in the decorator, you add a selector which the html can use. it's like
+any other html element:
+@Component({
+  selector: 'app-addUser',
+  templateUrl: './addUser.component.html',
+  styleUrls: ['./addUser.component.css']
+})
+
+then, wherever your using the component.  go
+to the parent html page and:
+<app-addUser></app-addUser>
+
+
+2/ select by attribute.
+you can also use an attribute insetad of an html tag.
+this might be convenient for styling:
+@Component({
+  selector: '[app-addUser]',
+  templateUrl: './addUser.component.html',
+  styleUrls: ['./addUser.component.css']
+})
+Then, wherever you would use the component, insetad of using the tagged selector:
+<div app-addUser></div>
+
+3/ select by class.
+@Component({
+  selector: '.app-addUser',
+  templateUrl: './addUser.component.html',
+  styleUrls: ['./addUser.component.css']
+})
+
+<div class="app-addUser"></div>
+
+* selecting by ID will not work.
+* pseduo selectors also do not work.

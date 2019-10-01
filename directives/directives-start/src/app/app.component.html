@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button
+        class="btn btn-primary"
+        (click)="onlyOdd = !onlyOdd">Only show odd numbers</button>
+      <br><br>
+      <ul class="list-group">
+        <div *ngIf="!onlyOdd">
+        <li
+          [ngClass]="{odd: number%2 !== 0,even: number%2===0}"
+          [ngStyle]="{backgroundColor: number%2 !== 0 ? 'orange':'transparent'}"
+          class="list-group-item"
+          *ngFor="let number of numbers">{{number}}
+        </li>
+      </div>
+      <div *ngIf="onlyOdd">
+        <li
+          class="list-group-item"
+          *ngFor="let onumber of odd_numbers">{{onumber}}
+        </li>
+      </div>
+      </ul>
+      <ng-template [ngIf]="onlyOdd">
+        <p>Only odd</p>
+      </ng-template>
+      <p appHighlight> Style me wiht a custom directive!</p>
+      <p appBetterHighlight> Style me wiht an even better custom directive!</p>
+    </div>
+    <div [ngSwitch]="value">
+      <p *ngSwitchCase="1">it's a one!</p>
+      <p *ngSwitchCase="3">it's a three!</p>
+      <p *ngSwitchCase="5">it's a five!</p>
+      <p *ngSwitchCase="20">it's 20!</p>
+  </div>
+</div>

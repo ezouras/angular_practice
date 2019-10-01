@@ -1,0 +1,43 @@
+1/ package.json
+lists dependencies that get installed
+when creating a new angular project:
+>ng new <project name>
+
+2/Main.ts
+the entry point of the application
+is main.ts.
+
+projeect->src->main.ts
+
+
+3/ app.module.ts
+in the src->app folder.
+It is the root module of the applicaiton.
+
+4/ app.component.ts
+in the src->app folder.
+it is the root component of the application.
+
+*********FLOW**********
+
+1/ When you start an angular project:
+>cd project-folder
+>ng serve
+
+execution goes to the main.ts file.
+
+2/ from main.ts, you bootstrap or kick start
+(last line) AppModule or
+app.module.ts.
+
+3/ from app.module.ts you bootstrap or
+kickstart AppComponent (see line 14) or
+app.component.ts
+
+4/ AppComponent has two things:
+  a/ html template
+  b/ class to control view logic.
+
+
+
+ //

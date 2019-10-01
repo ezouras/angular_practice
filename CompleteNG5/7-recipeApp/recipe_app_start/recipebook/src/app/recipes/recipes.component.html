@@ -1,0 +1,35 @@
+<div class="row">
+	<div class="col-md-5">
+				<!-- you know that (recipeSelectedEventUpstream) is an event defined in app-recipe-list. 
+					app-recipe-list has an @output that equals the event so that it can be recieved here. 
+					it triggers an event that simply sets a propety value in this compoment
+				--> 
+				<!-- moving recipe management  to recipe.management
+
+		<app-recipe-list (recipeSelectedEventFromUpstream)="recipeSelected=$event"></app-recipe-list>
+		
+				-->
+		<app-recipe-list></app-recipe-list>
+
+	</div>
+	<div class="col-md-7">
+		<!-- removing this and replacing with child routes
+				 you know that [recipe] is a property in the recipe-detail. 
+					recipe detail has @input in order to receive it from here. 
+				 
+
+		<app-recipe-detail 
+		*ngIf="recipeSelected; else noRecipeSelected"
+		[recipe]='recipeSelected'
+		>
+		</app-recipe-detail>
+	-->
+
+		<router-outlet></router-outlet>
+	</div>
+	<!--
+	<ng-template #noRecipeSelected>
+		<br><h2>Please select a recipe</h2>
+	</ng-template>
+-->
+</div>

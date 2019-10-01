@@ -1,0 +1,6 @@
+1/ in the html. plase the ngFor in the tag
+that needs to be repeated.
+
+<li class="list-group-item" *ngFor="let server of servers">
+  {{ server.name }}
+</li>

@@ -1,0 +1,24 @@
+Quote.component:
+https://blog.avenuecode.com/how-to-customize-your-angular-app-using-directives
+1/ the class only defines a function that is binded to the template
+
+2/ quote.component html page.
+<pre appQuote
+Where "appQuote" is the directive selector.
+
+  a. we are using the "directives.mypoliticianquote"
+  directive by  pulling it in in the tag.
+  this is done by simply using the direcvies "selector" name:
+  <pre appQuote
+  Where "appQuote" is the directive selector.
+
+  b. "polticianAuthor" and "politicianQuote" are @Inputs
+  to the directive. meaning, thy will be defined by the
+  template that calls it in.
+
+  c. when using a function, the @Input proeprty needs to be
+  explicitly binded. When you are just setting it to a value
+  in the template (NOT something defined in the comonent)
+  you don't need to explicitly bind it. If you remove the
+  binding from "politicianPOsition" it will equal the string
+  otherwise it will equal what is defined in the class.

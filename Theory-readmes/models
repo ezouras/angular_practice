@@ -1,0 +1,11 @@
+models
+create models folder in app.
+create a <name_of_model>.ts
+
+ie' /models/employee.ts
+
+export interface Employee{
+  age: number,
+  name: string,
+  salary: number
+}

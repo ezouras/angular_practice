@@ -1,0 +1,129 @@
+Dependancy Injection:
+
+@Injectable() = injectable decorator.
+a way to inject dependencies INTO the dependency.
+i the futre you might have some dependency.
+angular cli follows best practices so
+the @injectable is added whether you use it or not.
+
+
+you do not have @injetable in the component.
+@component tells the component that it might
+have an injectable dependency.
+
+
+a/ define a class that will be used for service.
+ie' EmployeeService class.
+
+>ng g s employee
+is created inside the src->app folder
+<name>.service.ts
+
+our service is used to
+provide employee data.
+
+
+b/ Register this class with an Injector.
+otherwise it will be like a regular
+class. it is a hierarchial injection system.
+
+appModule-> appcomponent-> employee List - > any children
+                        -> employeedetail  -> any children
+
+
+register to th eparent of the components
+that will use it. ie' if you register wiht
+employee list, it can be used by
+employee list and any of it's children.
+if you register with appcomopnent,
+it can be used by app components children.
+
+if you register in the "app module" then
+the app module and anyother modules
+you add (each one should be it's own faeatre)
+will be able to use it.
+
+go to th emodule:
+app.module.ts
+providers: [EmployeeService],
+
+also, import employee Service in
+app.module.ts
+import {EmployeeService} from './employee.service';
+
+
+
+c/ declare this class as a dependency whereever it is needed.
+for example the empolyyServier - which has the EmployeeList
+will be needed for EmpLIst and EmpDetail. both of those components
+will declare the employeeService class as a dependancy.
+
+
+EmployeeService(injector)-> empList
+                        -> empDetail
+
+code without DI - the drawbacks of not using DI.
+DI as a design pattern and how it overcomes those drawbacks.
+DI as a framework.
+
+/add necessary data to the component that uses the
+dependencey/
+
+add it to the consturctor:
+  constructor(private _employeeService: EmployeeService) {}
+
+import it to the component.
+import {EmployeeService} from './../employee.service'
+
+use the ngOnInit() that gets called once the
+component is created (it's a "hook"),
+to create the data that you need form the
+injector class:
+ngOnInit(){
+  this.employees=this._employeeService.getEmployees;
+
+}
+
+***********Why use DI *********
+
+
+Code without DI:
+
+Class Engine{
+  constructor(){}
+}
+
+Class Tires{
+  constructor(){}
+}
+
+
+Class Car{
+  engine;
+  tires;
+  constructor()
+  {  //two dependencies - engine and tires.
+  //when you contruct  anew car, you create
+  // a new engine and a new tires.
+    this.engine=new Engine();
+    this.tires= new Tires();
+  }
+}
+
+So what is wrong with the above?
+creating classes inside of classes.
+What if "engine" changes and takes a aparameter to
+defin whether or not it is a desial engine?
+
+Class Engine{
+  constructor(isDiesal){}
+}
+
+The car class is now broken because it does not take
+a parameter.
+if you change tires the same way, you need to change
+the car class again.  so the code is not flexible.
+
+
+also - it's not testable.
+you need to use DI as a Design Pattern (see 16a-rm)

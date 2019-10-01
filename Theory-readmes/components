@@ -1,0 +1,3 @@
+Components should focus on presenting data.
+They should delegate data access to a service.
+Therefore, they should not fetch or save data directly.

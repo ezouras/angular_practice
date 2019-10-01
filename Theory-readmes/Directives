@@ -1,0 +1,9 @@
+Directives
+
+1. Components  - directives with a template.
+2. Structural directives - change the dom
+layout by adding and removing elements.
+    a. NgFor, NgIf
+3. Attribute directives - change appearance
+style or behavior
+    a. NgStyle 

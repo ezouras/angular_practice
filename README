@@ -1,0 +1,22 @@
+README
+
+1/ create new angular project
+>ng new ang6-httpclient
+I don tthink angular likes hyphens
+
+
+2/start project
+>ng serve
+
+3/ start on a given host or port:
+>ng serve --host 0.0.0.0 --port 3000
+
+
+4/ generate service:
+ng generate service <name of service>
+ng g service rest
+
+5/ generate component:
+ng generate component <name of component>
+ng g component product
+ng g component product-add

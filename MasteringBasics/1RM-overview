@@ -1,0 +1,53 @@
+Why Angular?
+
+Modular approach
+re-usable code
+development quicker and easier
+usnit utestable
+google+microsoft - here to stay.
+makes use of typescript.
+
+
+1/ is node installed?
+>node -v
+
+
+2/ npm -v
+
+
+3/ ng --version
+
+
+4/ create a new project:
+>ng new <name of project>
+>ng new hello-world
+
+5/ cd into the project.
+>cd hello-world
+
+6/ run ngserver:
+>ng server
+
+might need to run:
+>npm install
+
+
+7/ create new component.
+g=generate
+c=component
+>ng g c <name of component>
+>ng g c test
+
+8/ create a service
+>ng g s <name of service>
+>ng g s employee
+
+is created inside the src->app folder
+
+
+
+
+
+
+
+//

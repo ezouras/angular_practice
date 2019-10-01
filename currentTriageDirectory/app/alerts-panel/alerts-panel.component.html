@@ -1,0 +1,13 @@
+<div class="panel-heading">
+  <h2>Alerts</h2>
+</div>
+
+<div class="panel-toggle">
+  <button type="button" class="btn btn-link" (click)="toggle()">
+    <fa-icon [icon]="isOpen ? faCaretRight : faCaretLeft"></fa-icon>
+  </button>
+</div>
+
+<div class="panel-content">
+  <app-alerts></app-alerts>
+</div>

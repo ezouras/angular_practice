@@ -1,0 +1,46 @@
+model and data must always be in sync.
+consider loginform:
+
+2 properties in the view.
+view: username
+      password
+
+
+2 properties in the model
+class: public username
+      public password.
+
+
+
+
+if there is an update in the view,
+the two variables in the model shoudl automatically
+be updated.  if there is an update in the model
+the view should be auotmatically updated.
+
+
+You must add it to the app.module.ts
+if you don't you get this message:
+"Can't bind to 'ngModel' since it isn't a
+known property of 'input'"
+
+
+projectName-> src -> app -> app.module.ts
+import { FormsModule } from '@angular/forms';
+
+then add it to the imports array in the same module:
+
+
+<input [(ngModel)]="name2" type="text">
+<h2>{{name2}}</h2>
+
+in js class:
+public name2="";
+
+
+
+
+
+
+
+//
