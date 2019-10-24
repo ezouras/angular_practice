@@ -24,10 +24,16 @@ export class RestService {
 
   getProducts():Observable<any>{
   	return this.http.get(endpoint + "products").pipe(map(this.extractData))
+    //pipe the data that is returned as a paramater to the extraData function. 
+    //it returns an observable that you can subscribe to. 
+    //Hence, the observable returned from this functino 
   }
 
   getProduct(id):Observable<any>{
   	return this.http.get(endpoint + "products/" +id).pipe(map(this.extractData))
+     //pipe the data that is returned as a paramater to the extraData function. 
+    //it returns an observable that you can subscribe to. 
+    //Hence, the observable returned from this functino 
   }
 
   addProduct(product):Observable<any>{
@@ -41,11 +47,12 @@ export class RestService {
   updateProduct(id,product): Observable<any>{
   	return this.http.put(endpoint + 'products/' +id, JSON.stringify(product),httpOptions) 
   		.pipe(
-  			tap(_=>console.log(`updated product id=${id}`)),
+  			tap(_=>console.log(`updated product id=${id}`)), //assumption is this si 'next' method
   			catchError(this.handleError<any>("updateProduct"))
   			)
   	}
-
+//unlike map, tap does not transform values.  it returns an observale. it's generally used for console.logs. 
+//you can also tap "error" messages in addition to next. 
 
   deleteProduct(id):Observable<any>{
   		return this.http.delete<any>(endpoint + "products/" +id, httpOptions)
@@ -63,6 +70,8 @@ export class RestService {
   	};
   };
 
+//T is anytype BUT unlike any, you need to return that same type that your passing in.   
+//it assigned T to whatever you pass in and ensures you return that same type. 
 
 
 }
